@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Git - la guida tascabile - niente di complicato!</title>
+    <link href="https://fonts.googleapis.com/css?family=Chelsea+Market" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/0/normalize.min.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body class="bg-light">
+
+    <!-- Sezione titolo -->
+    <div class="container text-center my-5">
+        <h1 class="display-4">git - Guida Italiana Tascabile</h1>
+        <p class="lead">Una piccola guida per iniziare con git. Niente di complicato ;)</p>
+        <a href="../index.html" class="btn btn-primary " data-size="large" data-hashtags="git">Home</a>
+    </div>
+
+    <!-- Sezione meta -->
+    <div class="container text-center">
+        <p class="meta">
+
+        </p>
+    </div>
+
+    <!-- Sezione installazione -->
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Installazione</h2>
+        <p class="text-center">
+            Per installare git sul proprio pc di casa
+        </p>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <a href="http://git-scm.com/download/mac" class="btn btn-outline-primary">Scarica Git per OSX</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="http://msysgit.github.io/" class="btn btn-outline-primary">Scarica Git per Windows</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="http://book.git-scm.com/2_installing_git.html" class="btn btn-outline-primary">Scarica Git per Linux</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Sezione creazione repository -->
+<div class="container py-5 bg-white">
+    <h2 class="text-center mb-4">Creazione di un nuovo repository su GitHub</h2>
+
+    <ol class="text-left mx-auto" style="max-width: 800px;">
+        <li>
+            Vai su <a href="https://github.com" target="_blank">GitHub</a> e accedi al tuo account.
+        </li>
+        <li>
+            Una volta loggato, clicca sul pulsante <strong>New</strong> (in alto a destra) per creare un nuovo repository.
+        </li>
+        <li>
+            Dai un nome al tuo repository con un nome-del-progetto
+        </li>
+        <li>
+            Seleziona se il repository sarà <strong>Pubblico</strong> o <strong>Privato</strong>:
+            <ul>
+                <li><strong>Pubblico:</strong> Il repository sarà visibile a tutti. Chiunque può vedere il tuo codice, ma solo tu (o i collaboratori che aggiungi) puoi modificarlo.</li>
+                <li><strong>Privato:</strong> Il repository sarà visibile solo a te e alle persone a cui concedi l'accesso.</li>
+            </ul>
+        </li>
+        <li>
+            Puoi opzionalmente aggiungere un file <code>README.md</code> per descrivere il tuo progetto e un file <code>.gitignore</code> per escludere determinati file dal repository.
+        </li>
+        <li>
+            Clicca su <strong>Create repository</strong>.
+        </li>
+    </ol>
+    <p class="text-center">
+        Una volta creato il repository, puoi clonarlo localmente sul tuo computer usando il seguente comando:
+    </p>
+    <p class="text-center">
+        <code>git clone https://github.com/tuo-username/nome-del-progetto.git</code>
+    </p>
+    <p class="text-center">
+        Ora hai una copia locale del repository su cui puoi iniziare a lavorare.
+    </p>
+</div>
+
+<!-- Sezione checkout repository -->
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Checkout di un repository</h2>
+        <p class="text-center">
+            Crea una copia di un repository locale eseguendo il comando<br/>
+            <code>git clone  https://github.com/tuo-username/nome-del-progetto.git</code>
+        </p>
+    </div>
+
+    <!-- Sezione ambiente di lavoro -->
+    <div class="container py-5 block-trees text-white">
+        <h2 class="text-center mb-4">Ambiente di lavoro</h2>
+        <p class="text-center">
+            La tua copia locale del repository è composta da tre "alberi" mantenuti da Git. <br/>
+            Il primo è la tua <code>Directory di lavoro</code> che contiene i file attuali.<br/>
+            Il secondo è l'<code>Index</code>, che fa da spazio di transito per i file.<br/>
+            E per finire, l'<code>HEAD</code> che punta all'ultimo commit fatto.
+        </p>
+        <img src="trees.png" alt="Schema degli alberi git" class="img-fluid mx-auto d-block">
+    </div>
+
+    <!-- Sezione aggiungere e validare -->
+    <div class="container py-5 bg-danger text-white">
+        <h2 class="text-center mb-4">Aggiungere & Validare</h2>
+        <p class="text-center">
+            Puoi proporre modifiche (aggiungendole all' <b>Index</b>) usando <br/>
+            <code>git add &lt;nomedelfile&gt;</code><br/>
+            <code>git add *</code><br/>
+            Per validare queste modifiche usa<br/>
+            <code>git commit -m "Messaggio descrittivo con le modifiche fatte"</code>
+        </p>
+    </div>
+
+    <!-- Sezione invio delle modifiche -->
+    <div class="container py-5 bg-warning">
+        <h2 class="text-center mb-4 text-black">Invio delle modifiche</h2>
+        <p class="text-center">
+            Per inviare le modifiche al repository remoto, esegui<br/>
+            <code>git push</code><br/>
+        </p>
+    </div>
+
+    <!-- Sezione branching -->
+    <div class="container py-5 bg-black text-white">
+        <h2 class="text-center mb-4">Branching</h2>
+        <p class="text-center text-white">
+            I branch sono utilizzati per sviluppare feature isolate. <br/>
+            Il branch main è quello di default quando crei un repository. 
+            Puoi usare altri branch per lo sviluppo ed infine incorporarli ('merge') nel master branch una volta completati.
+            <img src="branches.png" alt="Schema degli alberi git" class="img-fluid mx-auto d-block">
+
+            Crea un nuovo branch chiamato "feature_x" e passa al nuovo branch usando<br/>
+            <code>git checkout -b feature_x</code>
+        </p>
+    </div>
+
+    <!-- Altre sezioni seguono lo stesso pattern -->
+
+    <!-- Footer e commenti -->
+    <div class="container py-5 text-center">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
